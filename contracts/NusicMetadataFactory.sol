@@ -17,9 +17,9 @@ contract NusicMetadataFactory is Ownable, ReentrancyGuard {
     event SetupMetadata(string _artistName, string _artistId, address _metadataContract, string _type);
 
     function setupMetadataForArtist(string memory _artistName, string memory _artistId) public nonReentrant{
-        NusicMetadata metadata = new NusicMetadata(_artistName, _artistId, msg.sender);
-        usersMetadataContract[msg.sender] = address(metadata);
-        emit SetupMetadata(_artistName, _artistId, address(metadata), "Collection");
+        //NusicMetadata metadata = new NusicMetadata(_artistName, _artistId, msg.sender);
+        //usersMetadataContract[msg.sender] = address(metadata);
+        //emit SetupMetadata(_artistName, _artistId, address(metadata), "Collection");
     }
 
     function getMetadataContract(address userAddress) public view returns(address) {

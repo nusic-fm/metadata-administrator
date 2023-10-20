@@ -1,11 +1,11 @@
 {
     "localhost": {
-        "nusicMetadataFactory":"0x5FbDB2315678afecb367f032d93F642f64180aa3"
+        "nusicMetadata":"0x5FbDB2315678afecb367f032d93F642f64180aa3"
     },
     "mumbai": {
-        "nusicMetadataFactory":"0x12786a25d968c09d37df8b2268d8325B79f0280B"
+        "nusicMetadata":"0x5FbDB2315678afecb367f032d93F642f64180aa3"
     },
     "mainnet": {
-        "nusicMetadataFactory":""
+        "nusicMetadata":""
     }
 }
