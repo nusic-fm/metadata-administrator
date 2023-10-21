@@ -1,16 +1,16 @@
 import { ethers, network } from "hardhat";
-import { NusicMetadata, NusicMetadataFactory, NusicMetadataFactory__factory, NusicMetadata__factory } from "../typechain-types";
+import { NusicMetadata, NusicMetadata__factory } from "../typechain-types";
 
 async function main() {
 
   const [owner, addr1] = await ethers.getSigners();
   console.log("Network = ",network.name);
 
-  const NusicMetadataFactory:NusicMetadataFactory__factory = await ethers.getContractFactory("NusicMetadataFactory");
-  const nusicMetadataFactory:NusicMetadataFactory = await NusicMetadataFactory.deploy();
-  await nusicMetadataFactory.deployed();
+  const NusicMetadata:NusicMetadata__factory = await ethers.getContractFactory("NusicMetadata");
+  const nusicMetadata:NusicMetadata = await NusicMetadata.deploy()
+  await nusicMetadata.deployed();
 
-  console.log("NusicMetadataFactory deployed to:", nusicMetadataFactory.address);
+  console.log("NusicMetadata deployed to:", nusicMetadata.address);
 
 }
 
