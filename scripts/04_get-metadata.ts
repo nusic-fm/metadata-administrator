@@ -14,22 +14,14 @@ async function main() {
     nftAddress: string;
     tokenId: BigNumber;
     metadataFileReferenceId: string[];
-    
+    metadataType: BigNumber;
   }
 
-  const NusicMetadataFactory:NusicMetadataFactory__factory = await ethers.getContractFactory("NusicMetadataFactory");
-  const nusicMetadataFactory:NusicMetadataFactory = await NusicMetadataFactory.attach(addresses[network.name].nusicMetadataFactory);
-
-  console.log("NusicMetadataFactory deployed to:", nusicMetadataFactory.address);
-
-  const nusicMetadataContractAddress = await nusicMetadataFactory.getMetadataContract(owner.address);
-  console.log("nusicMetadataContractAddress = ",nusicMetadataContractAddress);
-
   const NusicMetadata:NusicMetadata__factory = await ethers.getContractFactory("NusicMetadata");
-  const nusicMetadata:NusicMetadata = await NusicMetadata.attach(nusicMetadataContractAddress);
+  const nusicMetadata:NusicMetadata = await NusicMetadata.attach(addresses[network.name].nusicMetadata);
   console.log("NusicMetadata address:", nusicMetadata.address);
 
-  const metadata:Metadata = await nusicMetadata.getMetadata(0);
+  const metadata:Metadata = await nusicMetadata.getMetadata("0x5FbDB2315678afecb367f032d93F642f64180aa3", 1);
   console.log(metadata);
 
 }
